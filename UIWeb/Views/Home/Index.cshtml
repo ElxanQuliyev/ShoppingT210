@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model HomeVM
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a  asp-controller="Home" asp-action="Contact">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+ <a  asp-area="AdminPanel" asp-controller="Home" asp-action="Privacy">Contact Razor</a>
+ <a  href="/tehluke">Contact html</a>
+
+ <div class="row">
+     @foreach (var item in Model.Products)
+     {
+         <div class="col-lg-4">
+            <h2>@item.Name</h2>
+            <p>@item.Description</p>
+            <b>@item.Price</b>
+         </div>
+     }
+ </div>
